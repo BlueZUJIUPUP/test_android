@@ -1,16 +1,16 @@
 node {
     stage('build'){
-        echo 'build';
-        echo 'master';
+     echo 'build';
+     echo 'master';
     }
 
     stage('SCM') {
-        checkout scm
+     checkout scm
   }
 
     stage('SonarQube Analysis') {
-        withSonarQubeEnv() {
-            sh "./gradlew sonarqube"
+     withSonarQubeEnv() {
+      sh "./gradlew sonarqube"
     }
   }
 }
